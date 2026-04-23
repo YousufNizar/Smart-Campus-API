@@ -16,11 +16,12 @@ This project implements the 5COSC022W coursework using **JAX-RS only** (Jersey) 
 
 When deployed to Tomcat with context path `smart-campus-api`:
 
-- Base: `http://localhost:8080/smart-campus-api/api/v1`
+- Base: `http://localhost:8080/smart-campus-api/api/v1`  
+  (Note the **`/api/v1` segment** — not `/v1` alone. The project will redirect `/v1` to `/api/v1` automatically.)
 
 ## Project Structure
 
-- `src/main/java/smartcampus/SmartCampusApplication.java` - JAX-RS app bootstrap (`@ApplicationPath("/api/v1")`)
+- `src/main/java/smartcampus/SmartCampusApplication.java` - JAX-RS app bootstrap (`@ApplicationPath("/api/v1")`; Jersey servlet maps `/*` in `web.xml`)
 - `src/main/java/smartcampus/model` - POJOs (`Room`, `Sensor`, `SensorReading`)
 - `src/main/java/smartcampus/store/InMemoryStore.java` - shared in-memory state
 - `src/main/java/smartcampus/resource` - REST resources
@@ -31,7 +32,7 @@ When deployed to Tomcat with context path `smart-campus-api`:
 ## Build and Run (NetBeans + Tomcat)
 
 1. Open NetBeans.
-2. `File -> Open Project` and select this folder (`smart-campus-api` Maven project root).
+2. `File -> Open Project` and select the **project root** folder that contains this `pom.xml` (e.g. `CSA CW`), not a nested subfolder.
 3. Add/configure Tomcat in NetBeans:
    - `Tools -> Servers -> Add Server -> Apache Tomcat`
    - Select local Tomcat installation folder.

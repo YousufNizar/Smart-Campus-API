@@ -4,4 +4,36 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <display-name>Smart Campus API</display-name>
+
+    <!-- More specific than Jersey /* — sends /v1? to the correct /api/v1? API -->
+    <servlet>
+        <servlet-name>v1Redirect</servlet-name>
+        <servlet-class>smartcampus.servlet.V1RedirectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>v1Redirect</servlet-name>
+        <url-pattern>/v1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>v1Redirect</servlet-name>
+        <url-pattern>/v1/*</url-pattern>
+    </servlet-mapping>
+
+    <!--
+      Jersey: one mapping for the whole WAR. The API path /api/v1 comes from
+      @ApplicationPath("/api/v1") on SmartCampusApplication (coursework + reliable on Tomcat).
+    -->
+    <servlet>
+        <servlet-name>jersey</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>smartcampus.SmartCampusApplication</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>jersey</servlet-name>
+    <url-pattern>/api/v1/*</url-pattern>
+    </servlet-mapping>
 </web-app>

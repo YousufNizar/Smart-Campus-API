@@ -2,6 +2,7 @@ package smartcampus.exception.mapper;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
@@ -15,6 +16,9 @@ public class ThrowableExceptionMapper implements ExceptionMapper<Throwable> {
 
     @Override
     public Response toResponse(Throwable exception) {
+        if (exception instanceof WebApplicationException) {
+            return ((WebApplicationException) exception).getResponse();
+        }
         LOGGER.log(Level.SEVERE, "Unhandled API exception", exception);
         ErrorResponse response = new ErrorResponse(
                 Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(),

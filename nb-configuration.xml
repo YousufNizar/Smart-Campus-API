@@ -3,5 +3,7 @@
     <properties xmlns="http://www.netbeans.org/ns/maven-properties-data/1">
         <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
         <netbeans.hint.deploy.j2eeVersion>1.8-web</netbeans.hint.deploy.j2eeVersion>
+        <org-netbeans-modules-maven-jaxws.rest_2e_config_2e_type>ide</org-netbeans-modules-maven-jaxws.rest_2e_config_2e_type>
+        <org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>Tomcat</org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>
     </properties>
 </project-shared-configuration>

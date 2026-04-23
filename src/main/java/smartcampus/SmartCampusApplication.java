@@ -13,6 +13,10 @@ import smartcampus.resource.DiscoveryResource;
 import smartcampus.resource.SensorResource;
 import smartcampus.resource.SensorRoomResource;
 
+/**
+ * Public API is at {@code /api/v1}
+ * {@code web.xml} maps Jersey to {@code /*}; this path is the JAX-RS application base.
+ */
 @ApplicationPath("/api/v1")
 public class SmartCampusApplication extends Application {
 
