@@ -1,4 +1,4 @@
-# Smart Campus Sensor & Room Management API
+# Smart Campus Sensor & Room Management REST API
 
 This project implements the 5COSC022W coursework using **JAX-RS only** (Jersey) as a **Maven WAR** project for **Apache Tomcat** in NetBeans.
 
