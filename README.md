@@ -1,4 +1,4 @@
-# Smart Campus Sensor & Room Management API
+# Smart Campus Sensor & Room Management REST API
 
 This project implements the 5COSC022W coursework using **JAX-RS only** (Jersey) as a **Maven WAR** project for **Apache Tomcat** in NetBeans.
 
@@ -174,10 +174,4 @@ Raw stack traces may leak package names, class names, internal file paths, frame
 
 JAX-RS request/response filters apply logging centrally for all endpoints, ensuring consistency and avoiding repeated `Logger.info()` statements in each method. This reduces boilerplate and makes observability easier to maintain.
 
-## Video Demonstration Checklist (10 minutes max)
 
-- Show server deployment in NetBeans to Tomcat.
-- Demonstrate each API section (discovery, rooms, sensors, filtering, sub-resources).
-- Demonstrate all key error scenarios (409, 422, 403, and generic 500).
-- Show responses are JSON and no stack trace is returned.
-- Speak clearly on camera and explain each test briefly.
