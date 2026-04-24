@@ -17,3 +17,4 @@ smartcampus\exception\mapper\RoomNotEmptyExceptionMapper.class
 smartcampus\exception\RoomNotEmptyException.class
 smartcampus\resource\DiscoveryResource.class
 smartcampus\exception\mapper\LinkedResourceNotFoundExceptionMapper.class
+smartcampus\exception\mapper\JsonMappingExceptionMapper.class
