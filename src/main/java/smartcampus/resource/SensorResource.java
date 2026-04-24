@@ -29,7 +29,16 @@ public class SensorResource {
         }
         return InMemoryStore.getSensorsByType(type);
     }
-
+    @GET
+    @Path("/{sensorId}")
+    public Response getSensorById(@PathParam("sensorId") String sensorId) {
+        Sensor sensor = InMemoryStore.getSensor(sensorId);
+        if (sensor == null) {
+            throw new NotFoundException("Sensor not found: " + sensorId);
+        }
+        return Response.ok(sensor).build();
+    }
+    
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createSensor(Sensor sensor, @Context UriInfo uriInfo) {

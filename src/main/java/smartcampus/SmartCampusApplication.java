@@ -8,6 +8,7 @@ import smartcampus.exception.mapper.LinkedResourceNotFoundExceptionMapper;
 import smartcampus.exception.mapper.RoomNotEmptyExceptionMapper;
 import smartcampus.exception.mapper.SensorUnavailableExceptionMapper;
 import smartcampus.exception.mapper.ThrowableExceptionMapper;
+import smartcampus.exception.mapper.JsonMappingExceptionMapper;
 import smartcampus.filter.ApiLoggingFilter;
 import smartcampus.resource.DiscoveryResource;
 import smartcampus.resource.SensorResource;
@@ -31,6 +32,7 @@ public class SmartCampusApplication extends Application {
         classes.add(SensorUnavailableExceptionMapper.class);
         classes.add(ThrowableExceptionMapper.class);
         classes.add(ApiLoggingFilter.class);
+        classes.add(JsonMappingExceptionMapper.class);
         return classes;
     }
 }
