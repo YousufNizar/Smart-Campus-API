@@ -118,7 +118,7 @@ src/main/java/smartcampus/
 5. Right-click the project → **Clean and Build**. Wait for `BUILD SUCCESS` in the Output panel.
 6. Right-click the project → **Run**. NetBeans will deploy the WAR to Tomcat automatically.
   or
-  Right-click project → Clean and Build
+  Right-click the project → Clean and Build
 Copy new smart-campus-api.war(inside the Target Folder) to Tomcat webapps folder
 Restart Tomcat manually in the Powershell (shutdown.bat → startup.bat)
 7. Open your browser or Postman and visit:
