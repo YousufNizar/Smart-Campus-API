@@ -17,10 +17,7 @@ This project implements the 5COSC022W coursework using **JAX-RS only** (Jersey) 
 When deployed to Tomcat with context path `smart-campus-api`:
 
 - Base: `http://localhost:8080/smart-campus-api/api/v1`  
-  (Note the **`/api/v1` segment** — not `/v1` alone. The project will redirect `/v1` to `/api/v1` automatically.)
-
-## Project Structure
-
+  
 - `src/main/java/smartcampus/SmartCampusApplication.java` - JAX-RS app bootstrap (`@ApplicationPath("/api/v1")`; Jersey servlet maps `/*` in `web.xml`)
 - `src/main/java/smartcampus/model` - POJOs (`Room`, `Sensor`, `SensorReading`)
 - `src/main/java/smartcampus/store/InMemoryStore.java` - shared in-memory state
