@@ -2,6 +2,20 @@
 
 This project implements the 5COSC022W coursework using **JAX-RS only** (Jersey) as a **Maven WAR** project for **Apache Tomcat** in NetBeans.
 
+## API Design Overview
+
+This API is a RESTful Smart Campus management system built with JAX-RS (Jersey) 
+and deployed on Apache Tomcat. It manages three core resources:
+
+- **Rooms** — Physical campus spaces identified by a unique ID (e.g. LIB-301), 
+  with a name, capacity, and a list of assigned sensor IDs.
+- **Sensors** — Hardware devices (CO2, Temperature, Occupancy etc.) assigned to 
+  rooms, with a status (ACTIVE, MAINTENANCE, OFFLINE) and a current reading value.
+- **Sensor Readings** — A historical log of measurement events recorded by each 
+  sensor, implemented as a sub-resource of Sensors.
+
+### Resource Hierarchy
+
 ## Technology and Constraints Compliance
 
 - Framework: JAX-RS (Jersey 2.x)
